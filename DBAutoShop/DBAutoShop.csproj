@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{133D30D0-AD33-4D88-B7FD-1A3B3DD87700}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBAutoShop</RootNamespace>
+    <AssemblyName>DBAutoShop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>chrysler.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\ExportAssistant.cs" />
+    <Compile Include="IniWorkers\IniException.cs" />
+    <Compile Include="IniWorkers\IniReader.cs" />
+    <Compile Include="IniWorkers\IniWritter.cs" />
+    <Compile Include="Controllers\QueryBuilder.cs" />
+    <Compile Include="Controllers\SQLQueryService.cs" />
+    <Compile Include="Controllers\DatabaseControlService.cs" />
+    <Compile Include="Controllers\FullTextSearchService.cs" />
+    <Compile Include="Controllers\ElementControlService.cs" />
+    <Compile Include="Controllers\TypeUtils.cs" />
+    <Compile Include="Controllers\XMLService.cs" />
+    <Compile Include="ORM\MiscTables\Classes.cs" />
+    <Compile Include="ORM\MiscTables\GearTypes.cs" />
+    <Compile Include="ORM\MiscTables\CommonClass.cs" />
+    <Compile Include="ORM\PrimaryTables\AutomobilesData.cs" />
+    <Compile Include="ORM\PrimaryTables\Clients.cs" />
+    <Compile Include="ORM\MiscTables\Colors.cs" />
+    <Compile Include="ORM\MiscTables\Manafacturers.cs" />
+    <Compile Include="ORM\PrimaryTables\Offices.cs" />
+    <Compile Include="ORM\PrimaryTables\Sells.cs" />
+    <Compile Include="ORM\PrimaryTables\Workers.cs" />
+    <Compile Include="ORM\MiscTables\Workplaces.cs" />
+    <Compile Include="ORM\PrimaryTables\PresenceCars.cs" />
+    <Compile Include="ORM\PrimaryTables\SelledCars.cs" />
+    <Compile Include="ORM\MiscTables\Countries.cs" />
+    <Compile Include="ORM\MiscTables\Languages.cs" />
+    <Compile Include="ORM\MiscTables\BodyTypes.cs" />
+    <Compile Include="ORM\PrimaryTables\Orders.cs" />
+    <Compile Include="EditForms\AutomobilesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\AutomobilesEditor.Designer.cs">
+      <DependentUpon>AutomobilesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\ClientsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\ClientsEditor.Designer.cs">
+      <DependentUpon>ClientsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\CountriesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\CountriesEditor.Designer.cs">
+      <DependentUpon>CountriesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\OfficesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\OfficesEditor.Designer.cs">
+      <DependentUpon>OfficesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\PresenceCarsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\PresenceCarsEditor.Designer.cs">
+      <DependentUpon>PresenceCarsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\SellsEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\SellsEditor.Designer.cs">
+      <DependentUpon>SellsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\ConnectionWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\ConnectionWizard.Designer.cs">
+      <DependentUpon>ConnectionWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\FullTextSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\FullTextSearchForm.Designer.cs">
+      <DependentUpon>FullTextSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\SmallEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\SmallEditor.Designer.cs">
+      <DependentUpon>SmallEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\OrdersEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\OrdersEditor.Designer.cs">
+      <DependentUpon>OrdersEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditForms\WorkersEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditForms\WorkersEditor.Designer.cs">
+      <DependentUpon>WorkersEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\SmallSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\SmallSelector.Designer.cs">
+      <DependentUpon>SmallSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditForms\AutomobilesEditor.resx">
+      <DependentUpon>AutomobilesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\ClientsEditor.resx">
+      <DependentUpon>ClientsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\CountriesEditor.resx">
+      <DependentUpon>CountriesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\OfficesEditor.resx">
+      <DependentUpon>OfficesEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\OrdersEditor.resx">
+      <DependentUpon>OrdersEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\PresenceCarsEditor.resx">
+      <DependentUpon>PresenceCarsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\SellsEditor.resx">
+      <DependentUpon>SellsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\WorkersEditor.resx">
+      <DependentUpon>WorkersEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\ConnectionWizard.resx">
+      <DependentUpon>ConnectionWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\FullTextSearchForm.resx">
+      <DependentUpon>FullTextSearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditForms\SmallEditor.resx">
+      <DependentUpon>SmallEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\SmallSelector.resx">
+      <DependentUpon>SmallSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chrysler.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль Microsoft .NET Framework 4 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Установщик Windows 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
