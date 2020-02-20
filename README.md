@@ -4,6 +4,8 @@
 
 Microsoft SQL Express + C# Test Application
 
+![Screenshot](/Screenshot.PNG?raw=true)
+
 ## Requirements
 
 - Visual Studio
@@ -11,6 +13,8 @@ Microsoft SQL Express + C# Test Application
 
 ## TODO
 
+- Errors in encoding
 - Connection Wizard
+- Fixes
 - i18l
 - Cool UI
