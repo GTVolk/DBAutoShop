@@ -3,7 +3,6 @@
 ## Description
 
 Microsoft SQL Express + C# Test Application
-
 ![Screenshot](/Screenshot.PNG?raw=true)
 
 ## Requirements
